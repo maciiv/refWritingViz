@@ -1,0 +1,49 @@
+.text-container {
+  line-height: 1.75em;
+}
+
+.tags-container {
+  margin-top: .5em;
+  margin-bottom: .5em;
+  display: flex;
+}
+
+.tag {
+  margin-left: .25em;
+  margin-right: .25em;
+  padding: .35em .65em;
+  font-size: 1em;
+  font-weight: 700;
+  border: 2px solid;
+  cursor: pointer;
+  transition: all 500ms;
+}
+
+.tag:hover {
+  background-color: #fff !important;
+}
+
+.tag.off {
+  text-decoration: line-through;
+  background-color: #fff !important;
+}
+
+.pill {
+  display: inline-block;
+  padding: .35em .65em;
+  font-size: .75em;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 1.5em;
+  border: 2px solid;
+  color: black;
+  cursor: default;
+}
+
+.pill.off {
+  border: none;
+}

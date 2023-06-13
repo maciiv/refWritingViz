@@ -1,0 +1,662 @@
+[
+	{
+		"Entities": [
+			{
+				"BeginOffset": 0,
+				"EndOffset": 9,
+				"Score": 0.9891447286422282,
+				"Text": "As a data",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 24,
+				"EndOffset": 28,
+				"Score": 0.8236571631483499,
+				"Text": "role",
+				"Type": "CN"
+			},
+			{
+				"BeginOffset": 29,
+				"EndOffset": 34,
+				"Score": 0.71867225024005,
+				"Text": "is to",
+				"Type": "CN"
+			},
+			{
+				"BeginOffset": 57,
+				"EndOffset": 72,
+				"Score": 0.9978592654077433,
+				"Text": "data to provide",
+				"Type": "AR"
+			},
+			{
+				"BeginOffset": 174,
+				"EndOffset": 193,
+				"Score": 0.9900818162215849,
+				"Text": "ethical issues with",
+				"Type": "CN"
+			},
+			{
+				"BeginOffset": 194,
+				"EndOffset": 211,
+				"Score": 0.9979150128049844,
+				"Text": "the findings that",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 212,
+				"EndOffset": 234,
+				"Score": 0.8245347584585763,
+				"Text": "could potentially have",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 315,
+				"EndOffset": 327,
+				"Score": 0.9990768988573642,
+				"Text": "I found that",
+				"Type": "ER"
+			},
+			{
+				"BeginOffset": 337,
+				"EndOffset": 361,
+				"Score": 0.9381910270445131,
+				"Text": "collection practices had",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 410,
+				"EndOffset": 435,
+				"Score": 0.9993795041469248,
+				"Text": "personal information that",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 487,
+				"EndOffset": 511,
+				"Score": 0.8445973971760166,
+				"Text": "findings were insightful",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 708,
+				"EndOffset": 717,
+				"Score": 0.9406076601155596,
+				"Text": "As a data",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 785,
+				"EndOffset": 800,
+				"Score": 0.9961960257321433,
+				"Text": "and ensure that",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 830,
+				"EndOffset": 843,
+				"Score": 0.9969024351194727,
+				"Text": "a manner that",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 844,
+				"EndOffset": 862,
+				"Score": 0.9925990824817297,
+				"Text": "is transparent and",
+				"Type": "CN"
+			},
+			{
+				"BeginOffset": 929,
+				"EndOffset": 942,
+				"Score": 0.6644985522883992,
+				"Text": "would require",
+				"Type": "AR"
+			},
+			{
+				"BeginOffset": 1003,
+				"EndOffset": 1025,
+				"Score": 0.877304674318305,
+				"Text": "could potentially have",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 1105,
+				"EndOffset": 1119,
+				"Score": 0.958221160953325,
+				"Text": "I believe that",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 1123,
+				"EndOffset": 1136,
+				"Score": 0.959965422199978,
+				"Text": "is crucial to",
+				"Type": "EV"
+			},
+			{
+				"BeginOffset": 1191,
+				"EndOffset": 1205,
+				"Score": 0.9918995253637072,
+				"Text": "As a member of",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 1231,
+				"EndOffset": 1240,
+				"Score": 0.9917787058780383,
+				"Text": "I plan to",
+				"Type": "AR"
+			},
+			{
+				"BeginOffset": 1265,
+				"EndOffset": 1283,
+				"Score": 0.9911330925078795,
+				"Text": "with my colleagues",
+				"Type": "CN"
+			},
+			{
+				"BeginOffset": 1341,
+				"EndOffset": 1355,
+				"Score": 0.8581867156066126,
+				"Text": "I also plan to",
+				"Type": "AR"
+			},
+			{
+				"BeginOffset": 1396,
+				"EndOffset": 1421,
+				"Score": 0.9995256491871589,
+				"Text": "collection practices that",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 1559,
+				"EndOffset": 1578,
+				"Score": 0.9669493515630757,
+				"Text": "ethical issues with",
+				"Type": "CN"
+			},
+			{
+				"BeginOffset": 1598,
+				"EndOffset": 1613,
+				"Score": 0.9785767750194836,
+				"Text": "analysis can be",
+				"Type": "AR"
+			},
+			{
+				"BeginOffset": 1686,
+				"EndOffset": 1699,
+				"Score": 0.9995239407847805,
+				"Text": "impact on the",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 1740,
+				"EndOffset": 1744,
+				"Score": 0.7288782533609185,
+				"Text": "data",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 1759,
+				"EndOffset": 1772,
+				"Score": 0.9552389935556528,
+				"Text": "is crucial to",
+				"Type": "EV"
+			},
+			{
+				"BeginOffset": 1802,
+				"EndOffset": 1817,
+				"Score": 0.9941691221487036,
+				"Text": "and ensure that",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 1847,
+				"EndOffset": 1860,
+				"Score": 0.9906954772096922,
+				"Text": "a manner that",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 1861,
+				"EndOffset": 1879,
+				"Score": 0.9813310547052051,
+				"Text": "is transparent and",
+				"Type": "CN"
+			},
+			{
+				"BeginOffset": 1908,
+				"EndOffset": 1923,
+				"Score": 0.994818309527634,
+				"Text": "By working with",
+				"Type": "RR"
+			}
+		],
+		"File": "datascientist_reflection.txt",
+		"Reflection": "As a data scientist, my role is to analyze and interpret data to provide insights and recommendations for business decisions. However, during a recent analysis, I discovered ethical issues with the findings that could potentially have a negative impact on our company's business model.\n\nUpon further investigation, I found that our data collection practices had inadvertently led to the inclusion of sensitive personal information that violated ethical data privacy standards. While the findings were insightful and provided valuable information for our company's strategy, the inclusion of this information was unethical and could result in significant consequences for both our company and our customers.\n\nAs a data scientist, I have a responsibility to prioritize ethical standards and ensure that our analysis is conducted in a manner that is transparent and respectful of privacy laws. However, resolving this ethical issue would require a significant overhaul of our data collection practices and could potentially have a negative impact on our business model.\n\nWhile this situation is challenging, I believe that it is crucial to prioritize ethical standards over business interests. As a member of the data analytics team, I plan to communicate my concerns with my colleagues and work with our leadership team to address this issue. I also plan to research and implement alternative data collection practices that prioritize privacy and ethical standards while still providing valuable insights for our company's strategy.\n\nIn conclusion, discovering ethical issues with the findings of an analysis can be challenging, especially when resolving these issues may have a negative impact on the company's business model. However, as a data scientist, it is crucial to prioritize ethical standards and ensure that our analysis is conducted in a manner that is transparent and respectful of privacy laws. By working with our leadership team and implementing alternative data collection practices, we can maintain our ethical standards while still providing valuable insights for our company's strategy."
+	},
+	{
+		"Entities": [
+			{
+				"BeginOffset": 206,
+				"EndOffset": 214,
+				"Score": 0.6053096259501507,
+				"Text": "how well",
+				"Type": "AR"
+			},
+			{
+				"BeginOffset": 304,
+				"EndOffset": 316,
+				"Score": 0.9262114743732306,
+				"Text": "to feel that",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 432,
+				"EndOffset": 447,
+				"Score": 0.9385486662898319,
+				"Text": "I realized that",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 450,
+				"EndOffset": 465,
+				"Score": 0.8605558145591634,
+				"Text": "could have been",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 677,
+				"EndOffset": 692,
+				"Score": 0.9601293168706208,
+				"Text": "need to work on",
+				"Type": "VR"
+			},
+			{
+				"BeginOffset": 721,
+				"EndOffset": 733,
+				"Score": 0.9918170252636812,
+				"Text": "risks on the",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 748,
+				"EndOffset": 764,
+				"Score": 0.700104033496096,
+				"Text": "need to focus on",
+				"Type": "VR"
+			},
+			{
+				"BeginOffset": 803,
+				"EndOffset": 807,
+				"Score": 0.5180368587917334,
+				"Text": "that",
+				"Type": "AR"
+			},
+			{
+				"BeginOffset": 808,
+				"EndOffset": 825,
+				"Score": 0.6742721437076001,
+				"Text": "I can maintain my",
+				"Type": "ER"
+			},
+			{
+				"BeginOffset": 880,
+				"EndOffset": 901,
+				"Score": 0.8286461992846754,
+				"Text": "also acknowledge that",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 954,
+				"EndOffset": 973,
+				"Score": 0.979901305662017,
+				"Text": "to communicate with",
+				"Type": "VR"
+			},
+			{
+				"BeginOffset": 995,
+				"EndOffset": 1010,
+				"Score": 0.9951730741552932,
+				"Text": "and ensure that",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 1018,
+				"EndOffset": 1028,
+				"Score": 0.9954400724180467,
+				"Text": "all on the",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 1040,
+				"EndOffset": 1041,
+				"Score": 0.9652507293041267,
+				"Text": "I",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 1042,
+				"EndOffset": 1051,
+				"Score": 0.7708218648288387,
+				"Text": "feel that",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 1054,
+				"EndOffset": 1071,
+				"Score": 0.7959187700880174,
+				"Text": "could have done a",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 1118,
+				"EndOffset": 1128,
+				"Score": 0.8490074534668677,
+				"Text": "plan to be",
+				"Type": "AR"
+			},
+			{
+				"BeginOffset": 1230,
+				"EndOffset": 1244,
+				"Score": 0.7310643502831718,
+				"Text": "I believe that",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 1332,
+				"EndOffset": 1347,
+				"Score": 0.8903923578688773,
+				"Text": "strong sense of",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 1416,
+				"EndOffset": 1440,
+				"Score": 0.7402493198178776,
+				"Text": "has served as a valuable",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 1479,
+				"EndOffset": 1483,
+				"Score": 0.6452917853650006,
+				"Text": "that",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 1484,
+				"EndOffset": 1485,
+				"Score": 0.49407341906088864,
+				"Text": "I",
+				"Type": "ER"
+			},
+			{
+				"BeginOffset": 1486,
+				"EndOffset": 1501,
+				"Score": 0.6566265248097748,
+				"Text": "need to improve",
+				"Type": "VR"
+			},
+			{
+				"BeginOffset": 1540,
+				"EndOffset": 1554,
+				"Score": 0.7711443884598483,
+				"Text": "as a member of",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 1623,
+				"EndOffset": 1624,
+				"Score": 0.5839849871307107,
+				"Text": "I",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 1625,
+				"EndOffset": 1637,
+				"Score": 0.7001586920837337,
+				"Text": "believe that",
+				"Type": "EP"
+			}
+		],
+		"File": "football_reflection.txt"
+	},
+	{
+		"Entities": [
+			{
+				"BeginOffset": 14,
+				"EndOffset": 31,
+				"Score": 0.9975331613517863,
+				"Text": "I understand that",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 137,
+				"EndOffset": 152,
+				"Score": 0.8963797775122231,
+				"Text": "best efforts to",
+				"Type": "CN"
+			},
+			{
+				"BeginOffset": 222,
+				"EndOffset": 251,
+				"Score": 0.9965869072470602,
+				"Text": "unexpected complications that",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 323,
+				"EndOffset": 340,
+				"Score": 0.9821730821560377,
+				"Text": "Reflecting on the",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 350,
+				"EndOffset": 364,
+				"Score": 0.9829442722147925,
+				"Text": "I believe that",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 371,
+				"EndOffset": 381,
+				"Score": 0.9870688618041388,
+				"Text": "were a few",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 382,
+				"EndOffset": 407,
+				"Score": 0.9984935639075807,
+				"Text": "contributing factors that",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 449,
+				"EndOffset": 462,
+				"Score": 0.921518445084698,
+				"Text": "may have been",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 617,
+				"EndOffset": 630,
+				"Score": 0.8879883426930076,
+				"Text": "may have been",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 673,
+				"EndOffset": 689,
+				"Score": 0.9747416636115753,
+				"Text": "the patient that",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 690,
+				"EndOffset": 697,
+				"Score": 0.77820861764571,
+				"Text": "we were",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 796,
+				"EndOffset": 798,
+				"Score": 0.7572888342248785,
+				"Text": "my",
+				"Type": "ER"
+			},
+			{
+				"BeginOffset": 819,
+				"EndOffset": 839,
+				"Score": 0.9976110915867414,
+				"Text": "and acknowledge that",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 840,
+				"EndOffset": 856,
+				"Score": 0.984160673373812,
+				"Text": "there were areas",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 866,
+				"EndOffset": 878,
+				"Score": 0.8157545548802116,
+				"Text": "I could have",
+				"Type": "VR"
+			},
+			{
+				"BeginOffset": 891,
+				"EndOffset": 896,
+				"Score": 0.7124549828119399,
+				"Text": "could",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 897,
+				"EndOffset": 901,
+				"Score": 0.593120920867085,
+				"Text": "have",
+				"Type": "VR"
+			},
+			{
+				"BeginOffset": 915,
+				"EndOffset": 932,
+				"Score": 0.9953989401792085,
+				"Text": "more clearly with",
+				"Type": "VR"
+			},
+			{
+				"BeginOffset": 994,
+				"EndOffset": 1008,
+				"Score": 0.9552905690534692,
+				"Text": "to ensure that",
+				"Type": "VR"
+			},
+			{
+				"BeginOffset": 1009,
+				"EndOffset": 1020,
+				"Score": 0.7351191181004604,
+				"Text": "we were all",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 1021,
+				"EndOffset": 1023,
+				"Score": 0.46336823048133413,
+				"Text": "on",
+				"Type": "EP"
+			},
+			{
+				"BeginOffset": 1055,
+				"EndOffset": 1071,
+				"Score": 0.9833458348934134,
+				"Text": "could have taken",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 1072,
+				"EndOffset": 1084,
+				"Score": 0.9837360230871811,
+				"Text": "more time to",
+				"Type": "VR"
+			},
+			{
+				"BeginOffset": 1126,
+				"EndOffset": 1144,
+				"Score": 0.9981127048460051,
+				"Text": "anatomy to prepare",
+				"Type": "AR"
+			},
+			{
+				"BeginOffset": 1189,
+				"EndOffset": 1204,
+				"Score": 0.9803231057458625,
+				"Text": "is important to",
+				"Type": "EV"
+			},
+			{
+				"BeginOffset": 1253,
+				"EndOffset": 1266,
+				"Score": 0.997105315268251,
+				"Text": "may have been",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 1290,
+				"EndOffset": 1306,
+				"Score": 0.994887968115151,
+				"Text": "there were other",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 1430,
+				"EndOffset": 1442,
+				"Score": 0.9954909043265389,
+				"Text": "we were able",
+				"Type": "RR"
+			},
+			{
+				"BeginOffset": 1591,
+				"EndOffset": 1606,
+				"Score": 0.9703019909912927,
+				"Text": "be difficult to",
+				"Type": "CN"
+			},
+			{
+				"BeginOffset": 1697,
+				"EndOffset": 1707,
+				"Score": 0.9971055857211377,
+				"Text": "I will use",
+				"Type": "VR"
+			},
+			{
+				"BeginOffset": 1713,
+				"EndOffset": 1732,
+				"Score": 0.9714496190277697,
+				"Text": "experience to learn",
+				"Type": "VR"
+			},
+			{
+				"BeginOffset": 1841,
+				"EndOffset": 1859,
+				"Score": 0.9803961347765342,
+				"Text": "I will continue to",
+				"Type": "AR"
+			},
+			{
+				"BeginOffset": 1866,
+				"EndOffset": 1883,
+				"Score": 0.9742323628448927,
+				"Text": "the importance of",
+				"Type": "EV"
+			}
+		],
+		"File": "surgeon_reflection.txt"
+	}
+]

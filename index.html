@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="./dist/refw-viz.umd.cjs"></script>
+    <link href="./dist/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="module">
+      d3.json("./dist/refs.json").then(c => {
+        const ref = RefWViz.reflection(c[0])
+        console.log(ref)
+        document.querySelector("#app").appendChild(ref.render())
+      })
+    </script>
+  </body>
+</html>
