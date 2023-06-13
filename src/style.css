@@ -1,3 +1,30 @@
+.input-group-container {
+  border: 2px solid;
+  display: flex;
+  border-radius: 1.5em;
+  margin-left: .5em;
+  margin-right: .5em;
+}
+
+.input-group-container input[type="color"] {
+  border: none;
+  outline: none;
+  appearance: none;
+  border-radius: 1.5em 0 0 1.5em;
+  height: auto;
+  padding: 0;
+  cursor: pointer;
+}
+
+.input-group-container input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.input-group-container input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 1.5em 0 0 1.5em;
+}
+
 .text-container {
   line-height: 1.75em;
 }
@@ -14,18 +41,11 @@
   padding: .35em .65em;
   font-size: 1em;
   font-weight: 700;
-  border: 2px solid;
   cursor: pointer;
-  transition: all 500ms;
-}
-
-.tag:hover {
-  background-color: #fff !important;
 }
 
 .tag.off {
   text-decoration: line-through;
-  background-color: #fff !important;
 }
 
 .pill {
