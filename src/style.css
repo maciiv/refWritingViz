@@ -12,12 +12,19 @@
   appearance: none;
   border-radius: 1.5em 0 0 1.5em;
   height: auto;
-  padding: 0;
+  padding: .125em;
   cursor: pointer;
+  background-color: transparent;
+  width: 2.5em;
 }
 
 .input-group-container input[type="color"]::-webkit-color-swatch-wrapper {
-  padding: 0;
+  padding: .125em;
+  border-radius: 1.5em 0 0 1.5em;
+}
+
+.input-group-container input[type="color"]::-webkit-color-swatch-wrapper:hover {
+  background-color: darkgray;
 }
 
 .input-group-container input[type="color"]::-webkit-color-swatch {
@@ -36,12 +43,16 @@
 }
 
 .tag {
-  margin-left: .25em;
-  margin-right: .25em;
-  padding: .35em .65em;
-  font-size: 1em;
+  margin: .125em;
+  padding: .125em .5em;
+  font-size: .875em;
   font-weight: 700;
+  border-radius: 0 1.5em 1.5em 0;
   cursor: pointer;
+}
+
+.tag:hover {
+  background-color: darkgray;
 }
 
 .tag.off {

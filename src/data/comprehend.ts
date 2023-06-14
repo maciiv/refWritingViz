@@ -1,13 +1,6 @@
-export interface IComprehend {
-	Entities: IComprehendEntity[]
-	File: string
-	Reflection: string
-}
+import { IEntity } from './entity'
 
-export interface IComprehendEntity {
-	BeginOffset: number
-	EndOffset: number
-	Score: number
-	Text: string
-	Type: string
+export interface IComprehend {
+	Entities: IEntity[]
+	File?: string
 }

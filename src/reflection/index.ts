@@ -1,39 +1,45 @@
-import { IComprehend } from '../data/comprehend'
-import * as d3 from 'd3'
 import createTags, { ITag } from './tags'
 import createText, { IPill } from './text'
 import filterPills from './filter'
+import ICreator from '../utils/creator'
+import { IDatum } from '../utils/datum'
+import { IEntity } from '../data/entity'
+import render from './render'
 
-export interface IReflection {
-	analysis: IComprehend
-	tags: ITag[]
-	pills: IPill[]
-	render(): HTMLDivElement
+export interface IReflection<T extends IEntity> extends IDatum<T> {
+	tags: ICreator<ITag>
+	pills: ICreator<IPill>
+	render: typeof render
 }
 
-export class Reflection implements IReflection {
-	protected reflection: HTMLDivElement
-	protected colourScale: d3.ScaleOrdinal<string, string, never>
-	analysis: IComprehend
-	tags: ITag[]
-	pills: IPill[]
-	constructor(analysis: IComprehend) {
-		this.analysis = analysis
-		this.reflection = document.createElement('div')
-		this.reflection.classList.add('reflection-container')
-		this.colourScale = d3.scaleOrdinal(d3.schemeCategory10)
+export class Reflection<T extends IEntity> implements IReflection<T> {
+	node: Element | null
+	data: T[]
+	readonly tags: ICreator<ITag>
+	readonly pills: ICreator<IPill>
+	render: <T extends IEntity>(
+		this: IReflection<T>,
+		fn?: ((tags: ICreator<ITag>, text: ICreator<IPill>) => void) | undefined
+	) => void
+	constructor(
+		datum: IDatum<T>,
+		text: string,
+		render: <T extends IEntity>(
+			this: IReflection<T>,
+			fn?: ((tags: ICreator<ITag>, text: ICreator<IPill>) => void) | undefined
+		) => void
+	) {
+		this.node = datum.node
+		this.data = datum.data
 		this.tags = createTags.bind(this)()
-		this.pills = createText.bind(this)()
+		this.pills = createText.bind(this)(text)
 		filterPills.bind(this)()
-	}
-
-	render() {
-		return this.reflection
+		this.render = render
 	}
 }
 
-const reflection = function (analysis: IComprehend) {
-	return new Reflection(analysis)
+const reflection = function <T extends IEntity>(this: IDatum<T>, text: string) {
+	return new Reflection(this, text, render)
 }
 
 export default reflection

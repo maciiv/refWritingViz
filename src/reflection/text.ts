@@ -1,5 +1,7 @@
 import { Reflection } from '.'
 import createPill from './pills'
+import Creator from '../utils/creator'
+import { IEntity } from '../data/entity'
 
 export interface IPill {
 	node: HTMLSpanElement
@@ -30,35 +32,33 @@ class Pill implements IPill {
 	}
 }
 
-const createText = function (this: Reflection) {
+const createText = function <T extends IEntity>(
+	this: Reflection<T>,
+	text: string
+) {
 	const div = document.createElement('div')
 	div.classList.add('text-container')
 	const pills = [] as IPill[]
 
-	this.analysis.Entities.forEach((entity, i, entities) => {
+	this.data.forEach((entity, i, entities) => {
 		const textSpan = document.createElement('span')
 		let pill: HTMLSpanElement
 
 		switch (i) {
 			case 0:
-				textSpan.innerHTML = this.analysis.Reflection.substring(
-					0,
-					entity.BeginOffset
-				)
+				textSpan.innerHTML = text.substring(0, entity.BeginOffset)
 				div.appendChild(textSpan)
 				pill = div.appendChild(createPill.bind(this)(entity))
 				break
 
 			case pills.length - 1:
-				textSpan.innerHTML = this.analysis.Reflection.substring(
-					entity.EndOffset
-				)
+				textSpan.innerHTML = text.substring(entity.EndOffset)
 				pill = div.appendChild(createPill.bind(this)(entity))
 				div.appendChild(textSpan)
 				break
 
 			default:
-				textSpan.innerHTML = this.analysis.Reflection.substring(
+				textSpan.innerHTML = text.substring(
 					entities[i - 1].EndOffset,
 					entity.BeginOffset
 				)
@@ -71,15 +71,18 @@ const createText = function (this: Reflection) {
 			new Pill(
 				pill,
 				entity.Type,
-				this.colourScale(entity.Type),
+				pill.style.borderColor,
 				entity.BeginOffset,
 				entity.EndOffset
 			)
 		)
 	})
 
-	this.reflection.appendChild(div)
-	return pills
+	return new Creator(pills, div)
+}
+
+export const removeText = function <T extends IEntity>(this: Reflection<T>) {
+	this.pills.parent.remove()
 }
 
 export default createText

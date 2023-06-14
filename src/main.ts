@@ -1,3 +1,3 @@
 import './style.css'
 
-export { default as reflection } from './reflection/index'
+export { default as selector } from './utils/selector'
