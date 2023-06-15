@@ -1,23 +1,30 @@
 import { IEntity } from '../data/entity'
 import reflection, { Reflection } from '../reflection'
+import { ITagFunctions } from '../reflection/tags'
 import { IDatum } from './datum'
 
-export interface IVisualisations<T extends IEntity> extends IDatum<T> {
+export interface IVisualisations<T> extends IDatum<T> {
 	reflection: typeof reflection
 }
 
-class Visualisations<T extends IEntity> implements IVisualisations<T> {
+class Visualisations<T> implements IVisualisations<T> {
 	node: Element | null
 	data: T[]
-	reflection: <T extends IEntity>(
+	reflection: <T>(
 		this: IDatum<T>,
-		text: string
+		fn: (
+			data: T[],
+			tags: <T extends IEntity>(this: Reflection<T>) => ITagFunctions
+		) => void
 	) => Reflection<T>
 	constructor(
 		datum: IDatum<T>,
-		reflection: <T extends IEntity>(
+		reflection: <T>(
 			this: IDatum<T>,
-			text: string
+			fn: (
+				data: T[],
+				tags: <T extends IEntity>(this: Reflection<T>) => ITagFunctions
+			) => void
 		) => Reflection<T>
 	) {
 		this.node = datum.node
@@ -26,7 +33,7 @@ class Visualisations<T extends IEntity> implements IVisualisations<T> {
 	}
 }
 
-const viz = function <T extends IEntity>(this: IDatum<T>): IVisualisations<T> {
+const viz = function <T>(this: IDatum<T>): IVisualisations<T> {
 	return new Visualisations(this, reflection)
 }
 

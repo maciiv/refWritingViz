@@ -1,9 +1,9 @@
 import * as d3 from 'd3'
-import { Reflection } from '.'
-import inputColour from '../components/inputColour'
-import inputGroup from '../components/inputGroup'
-import Creator from '../utils/creator'
-import { IEntity } from '../data/entity'
+import inputColour from '../../components/inputColour'
+import inputGroup from '../../components/inputGroup'
+import { IEntity } from '../../data/entity'
+import Creator from '../../utils/creator'
+import { IReflection } from '..'
 
 export interface ITag {
 	node: HTMLDivElement
@@ -22,12 +22,12 @@ class Tag implements ITag {
 	}
 }
 
-const createTags = function <T extends IEntity>(this: Reflection<T>) {
-	const types = Array.from(new Set(this.data.map((c) => c.Type)))
+const createTags = function <T extends IEntity>(
+	this: IReflection<T>,
+	data: T[]
+) {
+	const types = Array.from(new Set(data.map((c) => c.Type)))
 	const colourScale = d3.scaleOrdinal(d3.schemeCategory10)
-
-	const div = document.createElement('div')
-	div.classList.add('tags-container')
 
 	const tags = [] as Tag[]
 	types.forEach((type) => {
@@ -41,15 +41,15 @@ const createTags = function <T extends IEntity>(this: Reflection<T>) {
 		tagHtml.innerHTML = type
 		container.appendChild(inputColor)
 		container.appendChild(tagHtml)
-		const tag = div.appendChild(container)
+		const tag = this.tagsContainer.appendChild(container)
 		tags.push(new Tag(tag, type, colour))
 	})
 
-	return new Creator(tags, div)
-}
-
-export const removeTags = function <T extends IEntity>(this: Reflection<T>) {
-	this.tags.parent.remove()
+	if (this.tags === undefined) {
+		this.tags = new Creator(tags, this.tagsContainer)
+	} else {
+		this.tags.nodes.concat(tags)
+	}
 }
 
 export default createTags

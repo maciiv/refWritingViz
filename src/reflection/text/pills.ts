@@ -1,5 +1,5 @@
 import * as d3 from 'd3'
-import { IEntity } from '../data/entity'
+import { IEntity } from '../../data/entity'
 
 const createPill = function (entity: IEntity) {
 	const pill = document.createElement('span')

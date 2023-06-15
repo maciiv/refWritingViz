@@ -1,7 +1,7 @@
-import { Reflection } from '.'
+import { IReflection } from '..'
+import { IEntity } from '../../data/entity'
 import createPill from './pills'
-import Creator from '../utils/creator'
-import { IEntity } from '../data/entity'
+import Creator from '../../utils/creator'
 
 export interface IPill {
 	node: HTMLSpanElement
@@ -33,28 +33,27 @@ class Pill implements IPill {
 }
 
 const createText = function <T extends IEntity>(
-	this: Reflection<T>,
+	this: IReflection<T>,
+	data: T[],
 	text: string
 ) {
-	const div = document.createElement('div')
-	div.classList.add('text-container')
 	const pills = [] as IPill[]
 
-	this.data.forEach((entity, i, entities) => {
+	data.forEach((entity, i, entities) => {
 		const textSpan = document.createElement('span')
 		let pill: HTMLSpanElement
 
 		switch (i) {
 			case 0:
 				textSpan.innerHTML = text.substring(0, entity.BeginOffset)
-				div.appendChild(textSpan)
-				pill = div.appendChild(createPill.bind(this)(entity))
+				this.textContainer.appendChild(textSpan)
+				pill = this.textContainer.appendChild(createPill.bind(this)(entity))
 				break
 
 			case pills.length - 1:
 				textSpan.innerHTML = text.substring(entity.EndOffset)
-				pill = div.appendChild(createPill.bind(this)(entity))
-				div.appendChild(textSpan)
+				pill = this.textContainer.appendChild(createPill.bind(this)(entity))
+				this.textContainer.appendChild(textSpan)
 				break
 
 			default:
@@ -62,8 +61,8 @@ const createText = function <T extends IEntity>(
 					entities[i - 1].EndOffset,
 					entity.BeginOffset
 				)
-				div.appendChild(textSpan)
-				pill = div.appendChild(createPill.bind(this)(entity))
+				this.textContainer.appendChild(textSpan)
+				pill = this.textContainer.appendChild(createPill.bind(this)(entity))
 				break
 		}
 
@@ -78,11 +77,11 @@ const createText = function <T extends IEntity>(
 		)
 	})
 
-	return new Creator(pills, div)
-}
-
-export const removeText = function <T extends IEntity>(this: Reflection<T>) {
-	this.pills.parent.remove()
+	if (this.text === undefined) {
+		this.text = new Creator(pills, this.textContainer)
+	} else {
+		this.text.nodes.concat(pills)
+	}
 }
 
 export default createText

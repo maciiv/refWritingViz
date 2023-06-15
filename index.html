@@ -14,7 +14,11 @@
 
     <script type="module">
       d3.json("./dist/refs.json").then(c => {
-       RefWViz.selector("#app").data(c[0].Entities).viz().reflection(c[0].Reflection).render()
+        RefWViz.selector("#app").data(c[0].Entities).viz().reflection((d, r) => {
+        console.log(this)
+        r().createTags(d)
+        
+       }).render()
       })
     </script>
   </body>

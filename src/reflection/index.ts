@@ -1,45 +1,49 @@
-import createTags, { ITag } from './tags'
-import createText, { IPill } from './text'
-import filterPills from './filter'
+import { tagsContainer, tagFunctions, ITag, ITagFunctions } from './tags'
+import { IPill } from './text'
 import ICreator from '../utils/creator'
 import { IDatum } from '../utils/datum'
-import { IEntity } from '../data/entity'
 import render from './render'
+import { textContainer } from './text'
+import { IEntity } from '../data/entity'
 
-export interface IReflection<T extends IEntity> extends IDatum<T> {
-	tags: ICreator<ITag>
-	pills: ICreator<IPill>
+export interface IReflection<T> extends IDatum<T> {
+	tagsContainer: HTMLDivElement
+	textContainer: HTMLDivElement
+	tags: ICreator<ITag> | undefined
+	text: ICreator<IPill> | undefined
 	render: typeof render
 }
 
-export class Reflection<T extends IEntity> implements IReflection<T> {
+export class Reflection<T> implements IReflection<T> {
 	node: Element | null
 	data: T[]
-	readonly tags: ICreator<ITag>
-	readonly pills: ICreator<IPill>
-	render: <T extends IEntity>(
-		this: IReflection<T>,
-		fn?: ((tags: ICreator<ITag>, text: ICreator<IPill>) => void) | undefined
-	) => void
+	readonly tagsContainer: HTMLDivElement
+	readonly textContainer: HTMLDivElement
+	readonly tags: ICreator<ITag> | undefined
+	readonly text: ICreator<IPill> | undefined
+	render: <T>(this: IReflection<T>) => void
 	constructor(
 		datum: IDatum<T>,
-		text: string,
-		render: <T extends IEntity>(
+		render: <T>(
 			this: IReflection<T>,
 			fn?: ((tags: ICreator<ITag>, text: ICreator<IPill>) => void) | undefined
-		) => void
+		) => void,
+		fn: (data: T[], tags: ITagFunctions) => void
 	) {
 		this.node = datum.node
 		this.data = datum.data
-		this.tags = createTags.bind(this)()
-		this.pills = createText.bind(this)(text)
-		filterPills.bind(this)()
+		this.tagsContainer = tagsContainer()
+		this.textContainer = textContainer()
 		this.render = render
+		fn(datum.data, tagFunctions.bind(this)())
 	}
 }
 
-const reflection = function <T extends IEntity>(this: IDatum<T>, text: string) {
-	return new Reflection(this, text, render)
+const reflection = function <T>(
+	this: IDatum<T>,
+	fn: (data: T[], tags: ITagFunctions) => void
+) {
+	return new Reflection(this, render, fn)
 }
 
 export default reflection
