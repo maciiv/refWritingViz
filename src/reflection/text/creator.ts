@@ -1,7 +1,8 @@
-import { Reflection } from '.'
+import { IReflection } from '..'
+import { IEntity } from '../../data/entity'
 import createPill from './pills'
-import Creator from '../utils/creator'
-import { IEntity } from '../data/entity'
+import Creator from '../../utils/creator'
+import container from '../../components/container'
 
 export interface IPill {
 	node: HTMLSpanElement
@@ -32,15 +33,19 @@ class Pill implements IPill {
 	}
 }
 
-const createText = function <T extends IEntity>(
-	this: Reflection<T>,
+export type IcreateText = {
+	<T, E extends IEntity>(this: IReflection<T>, data: E[], text: string): void
+}
+
+const createText: IcreateText = function <T, E extends IEntity>(
+	this: IReflection<T>,
+	data: E[],
 	text: string
 ) {
-	const div = document.createElement('div')
-	div.classList.add('text-container')
+	const div = container('reflection-container')
 	const pills = [] as IPill[]
 
-	this.data.forEach((entity, i, entities) => {
+	data.forEach((entity, i, entities) => {
 		const textSpan = document.createElement('span')
 		let pill: HTMLSpanElement
 
@@ -51,7 +56,7 @@ const createText = function <T extends IEntity>(
 				pill = div.appendChild(createPill.bind(this)(entity))
 				break
 
-			case pills.length - 1:
+			case entities.length - 1:
 				textSpan.innerHTML = text.substring(entity.EndOffset)
 				pill = div.appendChild(createPill.bind(this)(entity))
 				div.appendChild(textSpan)
@@ -78,11 +83,8 @@ const createText = function <T extends IEntity>(
 		)
 	})
 
-	return new Creator(pills, div)
-}
-
-export const removeText = function <T extends IEntity>(this: Reflection<T>) {
-	this.pills.parent.remove()
+	this.textContainer.appendChild(div)
+	this.text.push(new Creator(pills, div))
 }
 
 export default createText

@@ -1,32 +1,26 @@
-import { IEntity } from '../data/entity'
-import reflection, { Reflection } from '../reflection'
+import { reflection, Ireflection } from '../reflection'
 import { IDatum } from './datum'
 
-export interface IVisualisations<T extends IEntity> extends IDatum<T> {
-	reflection: typeof reflection
+export interface IVisualisations<T> extends IDatum<T> {
+	reflection: Ireflection
 }
 
-class Visualisations<T extends IEntity> implements IVisualisations<T> {
+class Visualisations<T> implements IVisualisations<T> {
 	node: Element | null
 	data: T[]
-	reflection: <T extends IEntity>(
-		this: IDatum<T>,
-		text: string
-	) => Reflection<T>
-	constructor(
-		datum: IDatum<T>,
-		reflection: <T extends IEntity>(
-			this: IDatum<T>,
-			text: string
-		) => Reflection<T>
-	) {
+	reflection: Ireflection
+	constructor(datum: IDatum<T>, reflection: Ireflection) {
 		this.node = datum.node
 		this.data = datum.data
 		this.reflection = reflection
 	}
 }
 
-const viz = function <T extends IEntity>(this: IDatum<T>): IVisualisations<T> {
+export type Iviz = {
+	<T>(this: IDatum<T>): IVisualisations<T>
+}
+
+const viz: Iviz = function <T>(this: IDatum<T>): IVisualisations<T> {
 	return new Visualisations(this, reflection)
 }
 
