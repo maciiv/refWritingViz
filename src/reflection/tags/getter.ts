@@ -1,8 +1,12 @@
-import { Reflection } from '..'
-import { IEntity } from '../../data/entity'
+import { ITag } from '.'
+import { IReflection } from '..'
 
-const getTags = function <T extends IEntity>(this: Reflection<T>) {
-	return this.tags?.parent.querySelectorAll('.input-group-container')
+export type IgetTags = {
+	<T>(this: IReflection<T>): ITag[] | undefined
+}
+
+const getTags: IgetTags = function <T>(this: IReflection<T>) {
+	return this.tags?.nodes
 }
 
 export default getTags

@@ -1,17 +1,19 @@
-import { Reflection } from '..'
-import { IEntity } from '../../data/entity'
-import createTags from './creator'
-import getTags from './getter'
+import { IcreateTags, getTags, createTags, IgetTags } from '.'
+import { IReflection } from '..'
 
-export interface ITagFunctions {
-	createTags: typeof createTags
-	getTags: typeof getTags
+export type ITagFunctions = {
+	createTags: IcreateTags
+	getTags: IgetTags
 }
 
-const tagFunctions = function <T extends IEntity>(this: Reflection<T>) {
+export type ItagFunctions = {
+	<T>(this: IReflection<T>): ITagFunctions
+}
+
+const tagFunctions: ItagFunctions = function <T>(this: IReflection<T>) {
 	return {
-		createTags: createTags,
-		getTags: getTags,
+		createTags: createTags.bind(this),
+		getTags: getTags.bind(this),
 	} as ITagFunctions
 }
 

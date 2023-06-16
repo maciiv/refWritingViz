@@ -1,10 +1,15 @@
-import { IReflection } from '.'
+import { IReflection, filterText } from '.'
 
-const render = function <T>(this: IReflection<T>) {
+export type Irender = {
+	<T>(this: IReflection<T>): void
+}
+
+const render: Irender = function <T>(this: IReflection<T>) {
 	const reflection = document.createElement('div')
 	reflection.classList.add('reflection-container')
-	if (this.tags !== undefined) reflection.appendChild(this.tags.parent)
-	if (this.text !== undefined) reflection.appendChild(this.text.parent)
+	reflection.appendChild(this.tagsContainer)
+	reflection.appendChild(this.textContainer)
+	filterText.bind(this)()
 	this.node?.appendChild(reflection)
 }
 

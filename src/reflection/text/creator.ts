@@ -2,6 +2,7 @@ import { IReflection } from '..'
 import { IEntity } from '../../data/entity'
 import createPill from './pills'
 import Creator from '../../utils/creator'
+import container from '../../components/container'
 
 export interface IPill {
 	node: HTMLSpanElement
@@ -32,11 +33,16 @@ class Pill implements IPill {
 	}
 }
 
-const createText = function <T extends IEntity>(
+export type IcreateText = {
+	<T, E extends IEntity>(this: IReflection<T>, data: E[], text: string): void
+}
+
+const createText: IcreateText = function <T, E extends IEntity>(
 	this: IReflection<T>,
-	data: T[],
+	data: E[],
 	text: string
 ) {
+	const div = container('reflection-container')
 	const pills = [] as IPill[]
 
 	data.forEach((entity, i, entities) => {
@@ -46,14 +52,14 @@ const createText = function <T extends IEntity>(
 		switch (i) {
 			case 0:
 				textSpan.innerHTML = text.substring(0, entity.BeginOffset)
-				this.textContainer.appendChild(textSpan)
-				pill = this.textContainer.appendChild(createPill.bind(this)(entity))
+				div.appendChild(textSpan)
+				pill = div.appendChild(createPill.bind(this)(entity))
 				break
 
-			case pills.length - 1:
+			case entities.length - 1:
 				textSpan.innerHTML = text.substring(entity.EndOffset)
-				pill = this.textContainer.appendChild(createPill.bind(this)(entity))
-				this.textContainer.appendChild(textSpan)
+				pill = div.appendChild(createPill.bind(this)(entity))
+				div.appendChild(textSpan)
 				break
 
 			default:
@@ -61,8 +67,8 @@ const createText = function <T extends IEntity>(
 					entities[i - 1].EndOffset,
 					entity.BeginOffset
 				)
-				this.textContainer.appendChild(textSpan)
-				pill = this.textContainer.appendChild(createPill.bind(this)(entity))
+				div.appendChild(textSpan)
+				pill = div.appendChild(createPill.bind(this)(entity))
 				break
 		}
 
@@ -77,11 +83,8 @@ const createText = function <T extends IEntity>(
 		)
 	})
 
-	if (this.text === undefined) {
-		this.text = new Creator(pills, this.textContainer)
-	} else {
-		this.text.nodes.concat(pills)
-	}
+	this.textContainer.appendChild(div)
+	this.text.push(new Creator(pills, div))
 }
 
 export default createText

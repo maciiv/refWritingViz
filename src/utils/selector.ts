@@ -1,39 +1,25 @@
-import { IEntity } from '../data/entity'
-import data, { Data } from './data'
+import data, { Idata } from './data'
 
 export interface ISelector {
 	node: Element | null
-	data: typeof data
+	data: Idata
 }
 
 export class Selector implements ISelector {
 	node: Element | null
-	data: <T extends IEntity>(this: ISelector, data: T[]) => Data<T>
-	constructor(
-		node: Element | null,
-		data: <T extends IEntity>(this: ISelector, data: T[]) => Data<T>
-	) {
+	data: Idata
+	constructor(node: Element | null, data: Idata) {
 		this.node = node
 		this.data = data
 	}
 }
 
-const selector = function (selector: string) {
+export type Iselector = {
+	(selector: string): Selector
+}
+
+const selector: Iselector = function (selector: string) {
 	return new Selector(document.querySelector(selector), data)
 }
 
 export default selector
-
-// selector('test')
-// 	.data([
-// 		{
-// 			BeginOffset: 0,
-// 			EndOffset: 9,
-// 			Score: 0.9891447286422282,
-// 			Text: 'As a data',
-// 			Type: 'RR',
-// 		},
-// 	])
-// 	.viz()
-// 	.reflection('test')
-// 	.render((d) => d)

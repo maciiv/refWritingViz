@@ -1,4 +1,3 @@
-import * as d3 from 'd3'
 import inputColour from '../../components/inputColour'
 import inputGroup from '../../components/inputGroup'
 import { IEntity } from '../../data/entity'
@@ -22,19 +21,22 @@ class Tag implements ITag {
 	}
 }
 
-const createTags = function <T extends IEntity>(
+export type IcreateTags = {
+	<T, E extends IEntity>(this: IReflection<T>, data: E[]): void
+}
+
+const createTags: IcreateTags = function <T, E extends IEntity>(
 	this: IReflection<T>,
-	data: T[]
+	data: E[]
 ) {
 	const types = Array.from(new Set(data.map((c) => c.Type)))
-	const colourScale = d3.scaleOrdinal(d3.schemeCategory10)
 
 	const tags = [] as Tag[]
 	types.forEach((type) => {
 		const container = inputGroup()
 		const inputColor = inputColour()
 		const tagHtml = document.createElement('span')
-		const colour = colourScale(type)
+		const colour = this.colourScale(type)
 		tagHtml.classList.add('tag')
 		inputColor.value = colour
 		container.style.borderColor = colour

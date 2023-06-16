@@ -4,4 +4,7 @@ export { default as getTags } from './getter'
 export { default as tagFunctions } from './functions'
 
 export type { ITag } from './creator'
+export type { IcreateTags } from './creator'
+export type { IgetTags } from './getter'
 export type { ITagFunctions } from './functions'
+export type { ItagFunctions } from './functions'

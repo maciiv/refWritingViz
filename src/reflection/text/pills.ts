@@ -1,12 +1,17 @@
-import * as d3 from 'd3'
 import { IEntity } from '../../data/entity'
+import { IReflection } from '..'
 
-const createPill = function (entity: IEntity) {
+export type IcreatePill = {
+	(entity: IEntity): HTMLSpanElement
+}
+
+const createPill: IcreatePill = function <T>(
+	this: IReflection<T>,
+	entity: IEntity
+) {
 	const pill = document.createElement('span')
-	const colourScale = d3.scaleOrdinal(d3.schemeCategory10)
-	const colour = colourScale(entity.Type)
 	pill.classList.add('pill')
-	pill.style.borderColor = colour
+	pill.style.borderColor = this.colourScale(entity.Type)
 	pill.innerHTML = entity.Text
 	return pill
 }

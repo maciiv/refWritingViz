@@ -14,10 +14,10 @@
 
     <script type="module">
       d3.json("./dist/refs.json").then(c => {
-        RefWViz.selector("#app").data(c[0].Entities).viz().reflection((d, r) => {
-        console.log(this)
-        r().createTags(d)
-        
+        RefWViz.selector("#app").data(c).viz().reflection((d, tags, text) => {
+          const allEntities = d.map(c => c.Entities).flat()
+          tags().createTags(allEntities)
+          d.forEach(c => text().createText(c.Entities, c.Reflection))
        }).render()
       })
     </script>
