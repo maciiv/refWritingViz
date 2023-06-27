@@ -18,8 +18,11 @@ export type Iselector = {
 	(selector: string): Selector
 }
 
-const selector: Iselector = function (selector: string) {
-	return new Selector(document.querySelector(selector), data)
+const selector: Iselector = function (selector: string | Element) {
+	return new Selector(
+		typeof selector === 'string' ? document.querySelector(selector) : selector,
+		data
+	)
 }
 
 export default selector
