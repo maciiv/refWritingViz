@@ -40,9 +40,15 @@ export type IcreateText = {
 const createText: IcreateText = function <T, E extends IEntity>(
 	this: IReflection<T>,
 	data: E[],
-	text: string
+	text: string,
+	title?: string | undefined
 ) {
 	const div = container('reflection-container')
+	if (title !== undefined) {
+		const h3 = document.createElement('h3')
+		h3.innerHTML = title
+		div.appendChild(h3)
+	}
 	const pills = [] as IPill[]
 
 	data.forEach((entity, i, entities) => {

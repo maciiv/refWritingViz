@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-    <script src="./dist/refw-viz.umd.cjs"></script>
+    <script src="./dist/rwv.umd.cjs"></script>
     <link href="./dist/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
@@ -14,7 +14,7 @@
 
     <script type="module">
       d3.json("./dist/refs.json").then(c => {
-        RefWViz.selector("#app").data(c).viz().reflection((d, tags, text) => {
+        rwv.selector("#app").data(c).viz().reflection((d, tags, text) => {
           const allEntities = d.map(c => c.Entities).flat()
           tags().createTags(allEntities)
           d.forEach(c => text().createText(c.Entities, c.Reflection))

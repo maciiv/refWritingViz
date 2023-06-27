@@ -6,9 +6,9 @@ export default defineConfig({
 		lib: {
 			// Could also be a dictionary or array of multiple entry points
 			entry: resolve(__dirname, 'src/main.ts'),
-			name: 'RefWViz',
+			name: 'rwv',
 			// the proper extensions will be added
-			fileName: 'refw-viz',
+			fileName: 'rwv',
 		},
 		rollupOptions: {
 			// make sure to externalize deps that shouldn't be bundled
